@@ -16,11 +16,18 @@
 </script>
 
 <template>
-    <div>
+    <div id="heading" class="text-white p-3">
         Found {{ store.cardsArray.length }} cards
+    </div>
+    <div id="cards-container" class="d-flex justify-content-between flex-wrap">
+        <!-- ciclo le carte nel loro array  --> <!-- passo al props oggetto 'card' che utilizzerò in Card.vue-->
+        <Card v-for="(item,index) in store.cardsArray" :key="index" :card="item" />
     </div>
 </template>
 
 <style lang="scss">
     
+    #heading{
+        background-color: rgb(15,15,15);
+    }
 </style>
