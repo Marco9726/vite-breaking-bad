@@ -1,7 +1,9 @@
 <script>
   import axios from 'axios';
   import AppHeader from './components/AppHeader.vue';
-  import AppContent from './components/AppContent.vue'
+  import AppContent from './components/AppContent.vue';
+    // importo il file STORE 
+  import { store } from '../src/store.js';
   export default {
     components:{
       AppHeader,
@@ -9,8 +11,7 @@
     },
     data(){
       return{
-        cardArray: [],
-        url: "https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=Alien"
+        store
       }
     },
     created(){
@@ -18,8 +19,10 @@
     },
     methods:{
       getCards(){
-        axios.get(this.url).then((response) => {
-          console.log(response.data.data);
+        // chiamata axios 
+        axios.get(store.url).then((response) => {
+          // assegno l'array ottenuto dalla chiamata alla proprietà 'cardsArray' del file STORE 
+          store.cardsArray = response.data.data;
         })
       }
     }

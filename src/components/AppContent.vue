@@ -1,18 +1,23 @@
 <script>
+    import CardList from './mini-componemts/CardList.vue'
     export default {
-        
+        components:{
+            CardList
+        }
     }
 </script>
 <template>
-    <main class="w-100">
+    <main >
         <div id="main-container" class="py-3">
+            <!-- SELECT  -->
             <select class="form-select" aria-label="Default select example">
                 <option value="1">Alien</option>
                 <option value="2">Two</option>
                 <option value="3">Three</option>
             </select>
             <div id="content" class="bg-white">
-
+                <!-- inserisco la componente CardList  -->
+                <CardList/>
             </div>
         </div>
     </main>
