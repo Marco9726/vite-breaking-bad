@@ -24,6 +24,11 @@
           // assegno l'array ottenuto dalla chiamata alla proprietà 'cardsArray' del file STORE 
           store.cardsArray = response.data.data;
         })
+        //seconda chiamata
+        axios.get(store.arcUrl).then((response) => {
+          // assegno l'array ottenuto dalla chiamata alla proprietà 'arcArray' del file STORE 
+          store.arcArray = response.data;
+        })
       }
     }
   }
