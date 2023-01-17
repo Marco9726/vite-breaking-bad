@@ -3,7 +3,7 @@
     export default {
         props:{
             // prop passata da CardList.vue 
-            card: 'object'
+            card: Object
         }
     }
 </script>
@@ -17,7 +17,7 @@
                 {{ card.name }}
             </h6>
             <span>
-                {{  card.archetype }}
+                {{  card.type }}
             </span>
         </div>
     </div>
